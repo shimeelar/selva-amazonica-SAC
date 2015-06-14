@@ -1,0 +1,47 @@
+
+.carousel-control
+{
+width: 90px;
+ height: 90px;
+
+}
+
+.login{
+    
+    margin-bottom: -10px;
+}
+
+.carousel{
+    
+    margin-bottom:100px;
+    margin-left: 150px;
+    width: 500px;
+    height: 150px;
+}
+.txt
+{
+ text-align: center;
+}
+.pie{
+	background: black;
+	border-radius: 0.26em;
+	color: white;
+	text-align: center;
+        margin-top: 100px;
+   
+}
+.menu{
+    
+	text-align: center;
+	margin:0px;
+       margin-left: 80px;
+       margin-right: 100px;
+}
+.cabe{
+ 
+    
+}
+.tabla
+{
+    text-align: center;
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2015 10:40:13 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="proy.modelo.entidad.Persona" optimistic-lock="version" schema="PROYECTO" table="PERSONA">
+    <id name="idPersona" type="string">
+      <column length="30" name="ID_PERSONA"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nombres" type="string">
+      <column length="60" name="NOMBRES"/>
+    </property>
+    <property name="apellidos" type="string">
+      <column length="30" name="APELLIDOS"/>
+    </property>
+    <property name="dni" type="string">
+      <column length="8" name="DNI" unique="true"/>
+    </property>
+    <property name="genero" type="string">
+      <column length="30" name="GENERO"/>
+    </property>
+    <property name="fecNacimiento" type="date">
+      <column length="7" name="FEC_NACIMIENTO"/>
+    </property>
+    <property name="diereccion" type="string">
+      <column length="60" name="DIERECCION"/>
+    </property>
+    <property name="telefono" type="string">
+      <column length="30" name="TELEFONO"/>
+    </property>
+  </class>
+</hibernate-mapping>

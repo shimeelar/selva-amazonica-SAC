@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2015 10:40:13 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="proy.modelo.entidad.Pasajero" optimistic-lock="version" schema="PROYECTO" table="PASAJERO">
+    <id name="idPasajero" type="string">
+      <column length="30" name="ID_PASAJERO"/>
+      <generator class="assigned"/>
+    </id>
+    <set fetch="select" inverse="true" lazy="true" name="boletos" table="BOLETO">
+      <key>
+        <column length="30" name="ID_CONDUCTOR" not-null="true"/>
+      </key>
+      <one-to-many class="proy.modelo.entidad.Boleto"/>
+    </set>
+  </class>
+</hibernate-mapping>

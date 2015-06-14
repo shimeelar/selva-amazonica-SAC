@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2015 10:40:13 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="proy.modelo.entidad.Vehiculo" optimistic-lock="version" schema="PROYECTO" table="VEHICULO">
+    <id name="idVehiculo" type="string">
+      <column length="30" name="ID_VEHICULO"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="proy.modelo.entidad.Marca" fetch="select" name="marca">
+      <column length="30" name="ID_MARCA" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="proy.modelo.entidad.Color" fetch="select" name="color">
+      <column length="30" name="ID_COLOR" not-null="true"/>
+    </many-to-one>
+    <property name="idModelo" type="string">
+      <column length="30" name="ID_MODELO" not-null="true"/>
+    </property>
+    <property name="nroPlaca" type="string">
+      <column length="60" name="NRO_PLACA" not-null="true"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="viajeses" table="VIAJES">
+      <key>
+        <column length="30" name="ID_VEHICULO" not-null="true"/>
+      </key>
+      <one-to-many class="proy.modelo.entidad.Viajes"/>
+    </set>
+  </class>
+</hibernate-mapping>

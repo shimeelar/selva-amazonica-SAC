@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2015 10:40:13 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="proy.modelo.entidad.Usuario" optimistic-lock="version" schema="PROYECTO" table="USUARIO">
+    <id name="idUsuario" type="string">
+      <column length="30" name="ID_USUARIO"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="login" type="string">
+      <column length="60" name="LOGIN"/>
+    </property>
+    <property name="password" type="string">
+      <column length="60" name="PASSWORD"/>
+    </property>
+  </class>
+</hibernate-mapping>

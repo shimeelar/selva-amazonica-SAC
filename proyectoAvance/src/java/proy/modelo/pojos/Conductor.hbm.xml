@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 05/06/2015 10:40:13 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class name="proy.modelo.entidad.Conductor" optimistic-lock="version" schema="PROYECTO" table="CONDUCTOR">
+    <id name="idConductor" type="string">
+      <column length="30" name="ID_CONDUCTOR"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="nroLicencia" type="string">
+      <column length="60" name="NRO_LICENCIA"/>
+    </property>
+    <set fetch="select" inverse="true" lazy="true" name="viajeses" table="VIAJES">
+      <key>
+        <column length="30" name="ID_CONDUCTOR" not-null="true"/>
+      </key>
+      <one-to-many class="proy.modelo.entidad.Viajes"/>
+    </set>
+  </class>
+</hibernate-mapping>
