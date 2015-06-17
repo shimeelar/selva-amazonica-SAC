@@ -26,8 +26,8 @@
                 </div>
             </div>
         </div>  
-        
-        
+
+
         <div class="menu">
             <nav class="navbar navbar-inverse" >
                 <div class="navbar-header">
@@ -45,23 +45,20 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="opci_reegistrar.jsp">
                                             <span class="" aria-hidden="true"></span>
-                                             Registrar 
+                                            Registrar Personas 
                                         </a></li>
-                                         <li><a href="reg_vehiculo.jsp">
+                                    <li><a href="reg_vehiculo.jsp">
                                             <span class="" aria-hidden="true"></span>
-                                             Registrar Vehiculo 
+                                            Registrar Vehiculo 
                                         </a></li>
-                                   
-                                    <li class="divider"></li>
-                                    <li><a href="pasajeros.jsp">Reporte Pasajeros</a></li>
-                                    <li><a href="reg_vehiculo.jsp"> Reporte Conductores</a></li>
+                                    <li><a href=" viaje.jsp">Registrar Viajes</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >CONTACTOS<span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="registroPersonas.jsp">
-                                            <span class="#" aria-hidden="true"></span>
+                                    <li><a href="contactos.jsp">
+                                            <span class="" aria-hidden="true"></span>
                                             FACEBOOK
                                         </a></li>
                                     <li><a href="pasajero.jsp">
@@ -86,7 +83,7 @@
                                 </ul>
                             </li>
 
-                    </div><!--/.nav-collapse -->
+                    </div>
 
                 </div>
             </nav>

@@ -12,21 +12,21 @@
 </head>
 
 <body>
-	<article  >
+    <article>
 
         <div class="container">
             <div class="container-fluid" id="login">
                 <div class="row">
                     <div class="col-md-6">
-                        <h1 class=" form-signin-heading"><center><strong class="inicio">Inicio</strong></center></h1>
+                        <h1 class=" form-signin-heading"><strong class="inicio">Inicio</strong></h1>
                         <br>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <form class="" action="Login.jsp" method="post">
+                        <form class="login" action="Login.jsp" method="post">
                             <div class="form-group">
-                                <input type="Usuario" class="form-control" placeholder="Usuario" name="usuario" required autofocus>
+                                <input type="text" class="form-control" placeholder="Usuario" name="usuario">
 
                             </div>
                             <div class="form-group">

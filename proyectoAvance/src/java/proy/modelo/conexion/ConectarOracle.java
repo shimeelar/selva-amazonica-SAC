@@ -18,7 +18,7 @@ public class ConectarOracle {
         Connection conn = null;
         try {
             Class.forName("oracle.jdbc.OracleDriver");
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","proyecto","proy");
+            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:XE","proyecto","proy");
         } catch (Exception e) {
             e.printStackTrace();
         }        

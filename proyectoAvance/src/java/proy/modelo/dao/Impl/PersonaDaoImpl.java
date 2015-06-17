@@ -358,6 +358,63 @@ public class PersonaDaoImpl implements personaDao {
         return estado;
     }
 
+    @Override
+    public boolean deletePersona(String id) {
+      boolean estado=false;    
+    Statement st=null;    
+    String query="DELETE FROM persona WHERE id_persona="+id;
+        try {
+            st=open().createStatement();
+            st.executeUpdate(query);
+            open().commit();
+            open().close();
+            estado=true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            estado=false;
+            try {
+                open().rollback();
+                open().close();
+            } catch (Exception ex) {
+            }
+        }
+        return estado;
+    }
+
+    @Override
+    public List<Persona> listarPersona() {
+  Statement st = null;
+        ResultSet rs = null;
+        String query = "SELECT * FROM persona";
+        Persona persona = null;
+        List<Persona> lista = new ArrayList<>();
+        try {
+            st = open().createStatement();
+            rs = st.executeQuery(query);
+             open().close();
+            while (rs.next()) {   
+                persona = new Persona();
+                persona.setIdPersona(rs.getString("id_persona"));
+                persona.setNombres(rs.getString("nombre"));
+                persona.setApellidos(rs.getString("apellido"));
+                persona.setDni(rs.getString("dni"));
+                persona.setDireccion(rs.getString("direccion"));  
+                persona.setTelefono(rs.getString("telefono"));
+                persona.setFecNacimiento(rs.getString("fecha_nacimiento"));
+               persona.setDireccion(rs.getString("direccion"));
+                
+                lista.add(persona);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                open().close();
+            } catch (Exception ex) {
+            }
+        }
+        return lista;
+    }
+
     
       
        

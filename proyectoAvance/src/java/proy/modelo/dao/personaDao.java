@@ -31,6 +31,8 @@ public interface personaDao {
     public boolean insertarPasajero(Pasajero pasajero);
     public boolean insertarConductor(Conductor conductor);
     public boolean regViajes (Viajes viajes);
+    public boolean deletePersona(String id);
+    public List<Persona> listarPersona();
   
     
    

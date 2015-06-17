@@ -73,7 +73,9 @@
                 c.setNroLicencia(licencia);
                 if(d.insertarConductor(c)){
                      mensaje="se agrego correctamente";
-                }   else{
+                     response.sendRedirect("opci_reegistrar.jsp");
+                } 
+                else{
                      mensaje="no se pudo agregar correctamente";
                          }
                 
@@ -89,7 +91,7 @@
     </div>
     <div class="col-md-8 well">
          <div class="titleform1">
-           <h2>Registrar Conductor</h2>
+           <h2>Registrar Personas</h2>
         </div>
         <br>
         <div class="form1">
@@ -203,6 +205,29 @@
               <input type="text" class="form-control" placeholder="contraseña" name="contrasena">
             </div>
         </div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3"></div>
+        <div class="col-xs-12 col-sm-6 col-md-6 well well-sm">
+            <form>
+                <table>
+                    <tbody>
+                         <tr>
+                        <td width="8%"><label class="col-sm-12">nombres</label></td>
+                        <td width="15%"><label class="col-sm-12">Apellidos</label></td>
+                        <td width="10%"><label class="col-sm-12">dni</label></td>
+                        <td width="10%"><label class="col-sm-12">genero</label></td>
+                        <td width="10%"><label class="col-sm-12">f:nacimiento</label></td>
+                        <td width="20%"><label class="col-sm-12">Dirección</label></td>
+                        <td width="20%"><label class="col-sm-12">telefono</label></td>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-3"></div>
+    </div>
+</div>
+            
         <div class="form-group">
             <div class="col-xs-offset-3 col-xs-9">
                 <input type="submit" class="btn btn-primary" value="Enviar">

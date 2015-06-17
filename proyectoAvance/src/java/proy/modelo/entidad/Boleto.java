@@ -8,12 +8,20 @@ package proy.modelo.entidad;
  */
 public class Boleto  implements java.io.Serializable {
 
+    public String getBoletos() {
+        return boletos;
+    }
+
+    public void setBoletos(String boletos) {
+        this.boletos = boletos;
+    }
+
 
      private String idBoleto;
      private String idPasajero;
      private String idViaje;
      private String valorPagar;
-     private String total;
+     private String boletos;
 
     public Boleto() {
     }
@@ -49,16 +57,6 @@ public class Boleto  implements java.io.Serializable {
     public void setValorPagar(String valorPagar) {
         this.valorPagar = valorPagar;
     }
-
-    public String getTotal() {
-        return total;
-    }
-
-    public void setTotal(String total) {
-        this.total = total;
-    }
-
-
 }
 
 

@@ -9,19 +9,15 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import static java.util.Collections.list;
 import java.util.List;
-import org.hibernate.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import proy.modelo.conexion.ConectarOracle;
 import proy.modelo.dao.ViajeDao;
+import proy.modelo.entidad.Boleto;
 import proy.modelo.entidad.Ciudad;
 import proy.modelo.entidad.Conductor;
 import proy.modelo.entidad.Persona;
 import proy.modelo.entidad.Vehiculo;
 import proy.modelo.entidad.Viajes;
-import proy.modelo.util.HibernateUtil;
 
 /**
  *
@@ -72,13 +68,13 @@ public class ViajeDaoImpl implements ViajeDao {
                 + "id_ciudad,"
                 + "id_ciudaddestino,"
                 + "hora_viaje,"
-                + "fecha_viaje) values('"
+                + "fecha_viaje,estado) values('"
                 + viajes.getIdConductor() + "','"
                 + viajes.getIdVehiculo() + "','"
                 + viajes.getIdCiudad() + "','"
                 + viajes.getIdCiudaddestino() + "','"
                 + viajes.getHoraViaje() + "','"
-                + viajes.getFechaViaje() + "')";
+                + viajes.getFechaViaje() + "','1')";
 
         try {
             st = open().createStatement();
@@ -257,6 +253,37 @@ public class ViajeDaoImpl implements ViajeDao {
         }
 
         return lista;
+    }
+
+    @Override
+    public boolean RegistrarBoleto(Boleto boleto) {
+         boolean estado = false;
+        Statement st = null;
+        String query = "insert into boleto (id_boleto, "
+                + "id_pasajero, "
+                + "id_viajes, "
+                + "valor_pagar,boletos) values('','"
+                + boleto.getIdPasajero()+ "','"
+                + boleto.getIdViaje()+ "','"
+                + boleto.getValorPagar()+ "','"
+                +boleto.getBoletos()+"')";
+
+        try {
+            st = open().createStatement();
+            st.executeUpdate(query);
+            open().commit();
+            open().close();
+            estado = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            try {
+                open().rollback();
+                estado = false;
+                open().close();
+            } catch (Exception ex) {
+            }
+        }
+        return estado;
     }
 
 }

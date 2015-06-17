@@ -26,7 +26,7 @@
         vehiculo.setNroPlaca(nroPlaca);
 
         if (dao.insertarVehiculo(vehiculo)) {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("reg_vehiculo.jsp");
         } else {
             mensaje = "No se inserto correctamente";
         }

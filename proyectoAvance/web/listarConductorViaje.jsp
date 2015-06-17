@@ -101,6 +101,7 @@
                 <td>
                     <form method="post" action="compraBoleto.jsp">
                         <input type="submit" value="Comprar">
+                        <input type="hidden" value="<%=conductor.getId_viajes()%>" name="id_viajes">
                     </form>
                 </td>
                 </tbody>

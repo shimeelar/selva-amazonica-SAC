@@ -6,6 +6,7 @@
 package proy.modelo.dao;
 
 import java.util.List;
+import proy.modelo.entidad.Boleto;
 import proy.modelo.entidad.Ciudad;
 import proy.modelo.entidad.Conductor;
 import proy.modelo.entidad.Persona;
@@ -25,5 +26,6 @@ public interface ViajeDao {
     public List<Conductor> listarConductorViaje(String id);
     public boolean eliminarViajes(String id_viajes);
     public List<Persona> buscarPasajero(String dni);
+    public boolean RegistrarBoleto(Boleto boleto);
     
 }
